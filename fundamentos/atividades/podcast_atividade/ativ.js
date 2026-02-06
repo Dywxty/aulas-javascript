@@ -33,7 +33,7 @@ alert (`Sua compra total é de: ${compra_total.toFixed(2)} \n
 
 
 
-
+const, parFloat, prompt, alert, .toFixed
 
 
 
