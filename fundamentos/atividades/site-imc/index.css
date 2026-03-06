@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'candy', cursive;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffe6f0, #f7c6d9, #e8a0b6);
+    background-size: 300% 300%;
+    animation: fundoAnimado 8s ease infinite;
+}
+
+@keyframes fundoAnimado {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+h1 {
+    color: #6b0f2b;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
+
+form {
+    max-width: 420px;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(145deg, #ffd6e7, #b03060);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: subir 0.8s ease;
+}
+
+@keyframes subir {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #4a0c1f;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #fff0f6;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    background: #ffe4ef;
+    box-shadow: 0 0 8px #ff9ec4;
+}
+
+button, #resetButton, #calcular {
+    background: linear-gradient(135deg, #6b0f2b, #b03060);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+button:hover, 
+#resetButton:hover, 
+#calcular:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(135deg, #b03060, #ff9ec4);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+#resultado {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #4a0c1f;
+    font-weight: bold;
+    background: #ffe6f0;
+    padding: 10px;
+    border-radius: 10px;
+    animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Hospedagem</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="contenedor">
+        <cabecalho>
+            <h1>Calculadora de Hospedagem</h1>
+            <p class="subtitulo">Calcule o valor total da sua hospedagem no hotel</p>
+        </cabecalho>
+
+        <principal>
+            <div class="embrulho-conteudo">
+                <!-- Seção de Entrada -->
+                <secao class="secao-entrada">
+                    <h2>Informações da Hospedagem</h2>
+                    
+                    <div class="grupo-formulario">
+                        <label for="adultos">
+                            Adultos(Maiores de 12 anos)
+                        </label>
+                        <p class="dica">Preço cheio por pessoa</p>
+                        <input type="number" id="adultos" min="1" value="1">
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="criancas">
+                            Crianças(Menores de 12 anos)
+                        </label>
+                        <p class="dica">Meia entrada (50% do preço)</p>
+                        <input type="number" id="criancas" min="0" value="0">
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="dataEntrada">
+                            Data de Entrada
+                        </label>
+                        <input type="date" id="dataEntrada">
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="dataSaida">
+                            Data de Saída
+                        </label>
+                        <input type="date" id="dataSaida">
+                    </div>
+
+                    <div class="grupo-checkbox">
+                        <input type="checkbox" id="incluirAlmoco">
+                        <label for="incluirAlmoco">
+                            Incluir almoço nos finais de semana
+                        </label>
+                        <p class="dica">R$ 49,90 por pessoa (crianças pagam meia)</p>
+                    </div>
+
+                    <div class="caixa-informacao">
+                        <span class="icone">!!</span>
+                        <div>
+                            <strong>Regras de preço:</strong> Segunda a sexta R$ 99,50 (café e almoço). <br>
+                            Finais de semana R$ 139,90 (apenas café). <br>
+                            Feriados +15%. <br>
+                        </div>
+                    </div>
+                </secao>
+
+                <!-- Seção de Resultados -->
+                <secao class="secao-saida" id="secaoSaida" style="display: none;">
+                    <div class="cartao-resumo">
+                        <div class="item-resumo">
+                            <span class="rotulo">Total de Hóspedes</span>
+                            <span class="valor" id="totalHospedes">0 pessoas</span>
+                        </div>
+
+                        <div class="item-resumo">
+                            <span class="rotulo">Noites de Hospedagem</span>
+                            <span class="valor" id="totalNoites">0 noites</span>
+                        </div>
+
+                        <div class="item-resumo valor-total">
+                            <span class="rotulo">Valor Total</span>
+                            <span class="valor grande" id="valorTotal">R$ 0,00</span>
+                            <p class="detalhamento" id="detalhamento"></p>
+                        </div>
+                    </div>
+
+                    <div class="detalhamento-diario">
+                        <h3>Detalhamento por Dia</h3>
+                        <table id="tabelaDiaria">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Dia da Semana</th>
+                                    <th>Tipo</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody id="corpoTabelaDiaria">
+                            </tbody>
+                        </table>
+                    </div>
+                </secao>
+            </div>
+
+            <button class="botao-calcular" onclick="calcular()">Calcular Hospedagem</button>
+        </principal>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
